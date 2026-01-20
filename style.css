@@ -42,7 +42,6 @@ body * {
 #container {
     width: 360px;
     max-width: 588px;
-    height: 712px;
     margin-top: 56px;
     margin-right: auto;
     margin-bottom: auto;
@@ -86,12 +85,17 @@ body * {
     top: 50%;
     left: 0;
     z-index: 1;
+    animation: slide-back 0.2s;
     transform:translateY(-50%)
+
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -167,4 +171,32 @@ footer img {
     vertical-align: middle;/* alinha com o texto */
     margin-left: 6px;      /* espaço depois do coração */
     border-radius: 50%;
+}
+
+@media(min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/assets/bg-desktop.jpg);
+    }
+
+    .light{
+        --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+    }
+}
+
+@keyframes slide-in {
+    from{
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
