@@ -41,6 +41,7 @@ body * {
 
 #container {
     width: 360px;
+    max-width: 588px;
     height: 712px;
     margin-top: 56px;
     margin-right: auto;
